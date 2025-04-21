@@ -7,7 +7,7 @@ const allTasks = [];
 const addTask = () => {
   if (taskInput.value.trim() !== "") {
     allTasks[allTasks.length] = taskInput.value;
-    console.log(allTasks);
+    localStorage.setItem("tasks", JSON.stringify(allTasks));
     taskInput.value = "";
   } else {
     alert("Please write a valid Task");
@@ -43,6 +43,7 @@ const renderTask = () => {
     // Add delete functionality
     btn.addEventListener("click", () => {
       allTasks.splice(index, 1); // Remove from array
+      localStorage.setItem("tasks", JSON.stringify(allTasks));
       renderTask(); // Re-render
     });
 
@@ -52,4 +53,13 @@ const renderTask = () => {
   });
 };
 
+const loadTasks = () => {
+  let stored = JSON.parse(localStorage.getItem("tasks")) || [];
+  if (stored.length) {
+    allTasks.push(...stored);
+    renderTask();
+  }
+};
+
+loadTasks();
 listenEvent();
