@@ -33,7 +33,6 @@ const renderTask = () => {
     const li = document.createElement("li");
     li.setAttribute("class", "task");
     li.innerText = task;
-
     const div = document.createElement("div");
     div.setAttribute("class", "btns");
 
