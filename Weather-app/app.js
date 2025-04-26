@@ -1,33 +1,42 @@
 let weatherDescription = document.querySelector(".weather-description");
-let imgIcon = document.querySelector("#weather-icon").src;
+let imgIcon = document.querySelector("#weather-icon");
 let dateTime = document.querySelector(".date-time");
-let btn = document.querySelector("button");
+let temp = document.querySelector(".temp");
+const btn = document.querySelector("button");
 
 
+const apiKey = "e0334fc5866448c7aff32951241404";
+const loc = "dehradun"
 
-const cityName = "Dehradun";
-const stateCode = "UK";
-const countryCode = "IN";
-const apiKey = "faeb2fe4af7f4417d69965da71596845";
+console.log(weatherDescription , "..." , imgIcon , "..." , dateTime , "..." , temp)
 
-
-
-let url = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName},${stateCode},${countryCode}&appid=${apiKey}`
+let url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${loc}&days=1&aqi=no&alerts=no`;
 
 
-function getWeather() {
-    fetch(url).then((res) => {
-        return res.json();
-    }).then((data) => {
+async function getWeather() {
+    try{
+        let res = await fetch(url);
+        let data = await res.json();
         console.log(data)
-        console.log(data.list)
-        dateTime.innerText = data.list[1].dt_txt;
-        imgIcon = data.list[1].weather[0].icon;
-        imgIcon = data.list[1].weather[0].description;
-    }).catch((e) => {
-        console.log("----Error----");
+
+        //Weather Description
+       weatherDescription.innerText = data.current.condition.text;
+
+       //imgIcon
+       let iconadrs = data.current.condition.icon;
+       let correctAddress = "https:" + iconadrs;
+       imgIcon.setAttribute("src" , correctAddress);
+
+       //dateTime
+       dateTime.innerText  = data.current.last_updated;
+
+       //temp 
+       temp.innerText = data.current.temp_c + "°C";
+        
+    }catch(e){
+        console.log('-----Error-----');
         console.log(e)
-    })
+    }
 }
 
 btn.addEventListener("click" , () => {
