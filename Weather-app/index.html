@@ -9,14 +9,60 @@
 </head>
 <body>
     <div class="container">
+        <div class="input">
+            <input type="text" id="cityInput" placeholder="Enter Your City Name...." autofocus>
+            <button class="get-weather">Get Weather</button>
+        </div>
         <div class="weather">
-            <p class="weather-description">Clear Sky</p>
-            <img alt="Weather-icon" id="weather-icon" height="80" width="80">
-            <p class="date-time">Saturday, April 26 | 2:30</p>
-            <div class="temp"></div>
+            <p class="weather-description"></p>
+            <img alt="Weather-icon" id="weather-icon">
+            <p class="date-time"></p>
+            <div class="current-temp"></div>
+        </div>
+        <div class="weather-info">
+            <div class="rain info">
+                <i class="fa-solid fa-cloud-moon-rain" style="color: #63E6BE;"></i>
+                <p class="rain-info">12%</p>
+                <p>Rain</p>
+            </div>
+            <div class="wind-speed info">
+                <i class="fa-solid fa-wind" style="color: #74C0FC;"></i>
+                <p class="wind-info">12 km/h</p>
+                <p>wind speed</p>
+            </div>
+            <div class="humidity info">
+                <i class="fa-solid fa-droplet" style="color: #74C0FC;"></i>
+                <p class="humidity-info">18%</p>
+                <p>humidity</p>
+            </div>
+        </div>
+        <div class="info-texts">
+            <p class="today">Today</p>
+            <p class="next-hours">Next 4 hours ></p>
+        </div>
+        <div class="weather-hours-info">
+            <div class="first-hr hours">
+                <p class="time">7am</p>
+                <img  alt="" class="first-hr-icon weather-icon">
+                <p class="temp">35&deg;C</p>
+            </div>
+            <div class="second-hr hours">
+                <p class="time">7am</p>
+                <img  alt="" class="first-hr-icon weather-icon">
+                <p class="temp">35&deg;C</p>
+            </div>
+            <div class="third-hr hours">
+                <p class="time">7am</p>
+                <img src="" alt="" class="first-hr-icon weather-icon">
+                <p class="temp">35&deg;C</p>
+            </div>
+            <div class="fourth-hr hours">
+                <p class="time">7am</p>
+                <img  alt="" class="first-hr-icon weather-icon">
+                <p class="temp">35&deg;C</p>
+            </div>
         </div>
     </div>
-    <button class="click">Get Weather</button>
     <script src="app.js"></script>
 </body>
 </html>
