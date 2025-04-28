@@ -1,0 +1,87 @@
+/* Poppins Font from google */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+/* Basic Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body{
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+}
+
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    height: 70px;
+    background-color: #1d1e1a;
+}
+
+.navbar li{
+    list-style-type: none;
+}
+
+.navbar a{
+    color: white;
+    padding: 1rem;
+    text-decoration: none;
+}
+
+.navbar a:focus{
+    color: #ff5757;
+}
+
+/* Home Page Styling */
+#home{
+    height: 510px;
+    display: flex;
+    background-color: #070902;
+    color: white;
+    overflow: hidden;
+}
+#home .left-side{
+    width: 65%;
+    align-content: center;
+}
+#home .right-side{
+    width: 35%;
+    align-self: flex-end;
+}
+
+.hey, .intro, .name{
+    padding: 0.4rem 1rem;
+    font-size: 2.4rem;
+}
+
+.name{
+    color: #ff5757;
+}
+
+#home .right-side img{
+    height: 510px;
+}
+
+/* Footer Styling */
+.footer{
+    height: 60px;
+    width: 100%;
+    background-color: #1d1e1a;
+    color: white;
+    position: fixed;
+    bottom: 0;
+}
+
+.footer p{
+    text-align: center;
+    padding: 1rem 0.5rem;
+}
