@@ -4,18 +4,29 @@
 
 
 /* Basic Reset */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 /* Body Styling */
-body{
+body {
     min-height: 100vh;
     font-family: "Poppins", sans-serif;
 }
 
+/* Portfolio Styling */
+
+/* .portfolio{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.portfolio main {
+    flex-grow: 1;
+} */
 
 /* Navbar styling */
 .navbar {
@@ -27,61 +38,122 @@ body{
     background-color: #1d1e1a;
 }
 
-.navbar li{
+.navbar li {
     list-style-type: none;
 }
 
-.navbar a{
+.navbar a {
     color: white;
     padding: 1rem;
     text-decoration: none;
 }
 
-.navbar a:focus{
+.navbar a:focus {
     color: #ff5757;
 }
 
+
+
+
+
 /* Home Page Styling */
-#home{
-    height: 510px;
+.home-container {
+    height: 100%;
     display: flex;
-    background-color: #070902;
+    background-color: hsl(77, 64%, 2%);
     color: white;
     overflow: hidden;
 }
-#home .left-side{
+
+.home-container .left-side {
     width: 65%;
     align-content: center;
 }
-#home .right-side{
+
+.home-container .right-side {
     width: 35%;
     align-self: flex-end;
 }
 
-.hey, .intro, .name{
+.home-container .right-side img{
+    border: 2px solid rebeccapurple;
+    margin: 0;
+    vertical-align: middle;
+}
+
+@media only screen and (max-width:320px) {
+    .home-container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        background-color: hsl(77, 64%, 2%);
+        color: white;
+    }
+
+    .home-container .left-side {
+        width: 100%;
+    }
+
+    .home-container .right-side {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width:321px) and (max-width:768px){
+    .home-container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        background-color: hsl(77, 64%, 2%);
+        color: white;
+    }
+
+    .home-container .left-side {
+        width: 100%;
+    }
+
+    .home-container .right-side {
+        width: 100%;
+    }
+}
+
+.hey,
+.intro,
+.name {
     padding: 0.4rem 1rem;
     font-size: 2.4rem;
 }
 
-.name{
+.name {
     color: #ff5757;
 }
 
-#home .right-side img{
+.home .right-side img {
     height: 510px;
 }
 
-/* Footer Styling */
-.footer{
-    height: 60px;
-    width: 100%;
-    background-color: #1d1e1a;
-    color: white;
-    position: fixed;
-    bottom: 0;
+/* Section Styling  for Javascript*/
+.section {
+    display: none;
 }
 
-.footer p{
+.section.active {
+    display: block;
+}
+
+/* Footer Styling */
+
+#footer {
+    background-color: #1d1e1a;
+    color: white;
+    position: absolute;
+    width: 100%;
+    height: 60px;
+}
+
+.footer p {
     text-align: center;
     padding: 1rem 0.5rem;
 }
