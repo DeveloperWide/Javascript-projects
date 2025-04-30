@@ -14,6 +14,7 @@
 body {
     min-height: 100vh;
     font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
 }
 
 /* Portfolio Styling */
@@ -31,10 +32,12 @@ body {
 /* Navbar styling */
 .navbar {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    height: 70px !important;
     justify-content: center;
     gap: 2rem;
-    height: 70px;
+    height: auto;
     background-color: #1d1e1a;
 }
 
@@ -48,13 +51,13 @@ body {
     text-decoration: none;
 }
 
+.navbar li i{
+ margin-right: 0.4rem;
+}
+
 .navbar a:focus {
     color: #ff5757;
 }
-
-
-
-
 
 /* Home Page Styling */
 .home-container {
@@ -75,13 +78,187 @@ body {
     align-self: flex-end;
 }
 
-.home-container .right-side img{
-    border: 2px solid rebeccapurple;
-    margin: 0;
+img{
     vertical-align: middle;
 }
 
+.hey,
+.intro,
+.name {
+    padding: 0.4rem 1rem;
+    font-size: 2.4rem;
+}
+
+.name {
+    color: #ff5757;
+}
+
+.home .right-side img {
+    height: 510px;
+}
+
+/* About Container */
+
+.about-container{
+    display: flex;
+    background-color: black;
+    color: white;
+    justify-content: center;
+}
+.about-container .left-side{
+    width: 55%;
+    padding: 1rem 2rem;
+}
+
+.about-container .left-side h2{
+  font-size: 5rem;
+  color: #ff5757d8;
+  padding: 0.3rem;
+}
+.about-container .left-side .about-intro{
+    font-size: 2rem;
+    padding: 1rem;
+}
+
+.about-container .left-side .about-details{
+    font-size: 1.3rem;
+    padding: 1rem;
+}
+
+.about-container .right-side{
+    width: 45%;
+}
+
+.about-container .right-side img{
+   height: 480px;
+   /* border: 2px solid #ff5757; */
+   border-radius:50% 20% / 10% 40%;
+   margin: 1rem;
+}
+
+.project-container{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+}
+
+.project-container .projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem 0.5rem 1rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+
+
+.projects .project-card{
+    height: 520px;
+    max-width: 400px;
+    border-radius: 1rem;
+    margin: 1rem;
+    background-color: #1d1e1a;
+    color: white;
+}
+
+.projects .project-card img{
+    width: 100%;
+    height: 290px;
+    object-fit: cover center;
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+}
+
+.project-title , .project-detail , .link{
+    padding: 0.3rem 0.5rem;
+}
+
+.project-title{
+    color: #ff5757;
+}
+
+.project-detail{
+    padding: 0.5rem 0.7rem;
+    border-left: 2px solid #ff5757;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    color: rgba(240, 248, 255, 0.726);
+}
+
+.project-title ~ div{
+    padding: 1rem;
+}
+
+.link{
+    font-size: 1.2rem;
+    padding: 0rem 0rem 0.3rem 1rem;
+    color: rgb(52, 52, 170);
+    text-decoration: none;
+    opacity: 0.7;
+}
+
+.link:hover{
+    opacity: 1;
+}
+
+.link:active{
+    color: #ff5757;
+    text-decoration: underline;
+}
+
+/* Section Styling  for Javascript*/
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+
+/* Footer Styling */
+
+#footer {
+    background-color: #1d1e1a;
+    color: white;
+    position: absolute;
+    width: 100%;
+    height: 60px;
+}
+
+.footer p {
+    text-align: center;
+    padding: 1rem 0.5rem;
+}
+
+/* Media Queries */
 @media only screen and (max-width:320px) {
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.3rem;
+        width: 100%;
+        height: auto;
+        background-color: #1d1e1a;
+    }
+    
+    .navbar li {
+        list-style-type: none;
+    }
+    
+    .navbar a {
+        color: white;
+        padding: 0.3rem;
+        text-decoration: none;
+    }
+    
+    .navbar a:focus {
+        color: #ff5757;
+    }
+
     .home-container {
         height: 100%;
         display: flex;
@@ -101,6 +278,14 @@ body {
 }
 
 @media only screen and (min-width:321px) and (max-width:768px){
+    .navbar{
+        height: auto;
+        flex-wrap: wrap;
+    }
+
+    .navbar li a{
+        margin: 0.5rem 0.3rem;
+    }
     .home-container {
         height: 100%;
         display: flex;
@@ -117,43 +302,4 @@ body {
     .home-container .right-side {
         width: 100%;
     }
-}
-
-.hey,
-.intro,
-.name {
-    padding: 0.4rem 1rem;
-    font-size: 2.4rem;
-}
-
-.name {
-    color: #ff5757;
-}
-
-.home .right-side img {
-    height: 510px;
-}
-
-/* Section Styling  for Javascript*/
-.section {
-    display: none;
-}
-
-.section.active {
-    display: block;
-}
-
-/* Footer Styling */
-
-#footer {
-    background-color: #1d1e1a;
-    color: white;
-    position: absolute;
-    width: 100%;
-    height: 60px;
-}
-
-.footer p {
-    text-align: center;
-    padding: 1rem 0.5rem;
 }

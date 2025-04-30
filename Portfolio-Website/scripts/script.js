@@ -2,6 +2,7 @@ let links = document.querySelectorAll("nav a");
 let sections = document.querySelectorAll(".section");
 let home = document.querySelector(".home")
 
+
 function showSection(el) {
     console.log(el);
     sections.forEach((section) => {
