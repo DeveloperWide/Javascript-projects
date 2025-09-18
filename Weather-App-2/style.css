@@ -1,0 +1,5 @@
+body{
+    background-image: url("/public/bg-image.jpg");
+    background-size: cover;
+    background-position: bottom;
+}

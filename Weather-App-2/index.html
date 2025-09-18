@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App Using --- HTML , TailwindCSS , JS</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-black text-white">
+    <div class="weather-container grid grid-cols-1 sm:grid-cols-3 h-screen relative">
+        <!-- First div -->
+        <div class="weather flex flex-col gap-40 justify-center items-center sm:h-full sm:col-span-2 bg-[#000a]">
+            <div class="search-location flex justify-center gap-2 w-[100%]">
+                <label class="input bg-transparent border-gray-600 text-white w-[50%] outline-none">
+                    <svg class="h-[1.5em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none"
+                            stroke="currentColor">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.3-4.3"></path>
+                        </g>
+                    </svg>
+                    <input type="search" required placeholder="Enter Your Location" class="search capitalize"/>
+                </label>
+                <button class="btn search-btn bg-[#1117] text-gray-300 border-gray-600 btn-neutral">Search</button>
+            </div>
+            <div class="flex items-end relative top-5 rigth-5 md:top-15 md:right-15">
+                <div class="text-6xl md:text-8xl font-bold" id="temp">29&deg;</div>
+                <div class="time-details flex flex-col">
+                    <div class="flex">
+                        <div class="location text-xl md:text-3xl" id="location">London</div>
+                    </div>
+                    <div class="flex  gap-2">
+                        <div id="time">06:09</div>
+                        <div id="date"> 9 Sep '19</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Second div -->
+        <div class="weather-details sm:col-span-1 bg-[#212c30ee]">
+            <h3 class="text-3xl p-4 font-mono italic">Weather Details</h3>
+            <hr class="h-1 opacity-50">
+            <div class="details">
+                <div class="cloudy flex justify-between p-4 text-gray-300">
+                    <p class="text">Cloudy</p>
+                    <p class="value" id="cloudy">86%</p>
+                </div>
+                <div class="humidity flex justify-between p-4 text-gray-300">
+                    <p class="text">Humidity</p>
+                    <p class="value" id="humidity">62%</p>
+                </div>
+                <div class="wind flex justify-between p-4 text-gray-300">
+                    <p class="text">Wind</p>
+                    <p class="value" id="wind">8km/h</p>
+                </div>
+            </div>
+        </div>
+    </div>
+  <script src="app.js"></script>
+</body>
+
+</html>
